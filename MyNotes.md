@@ -1,0 +1,32 @@
+
+# [Secure a .NET web app with the ASP.NET Core Identity framework](https://learn.microsoft.com/en-us/training/modules/secure-aspnet-core-identity)
+
+## Add ASP.NET core identity
+
+```
+dotnet tool install dotnet-aspnet-codegenerator --version 6.0.2 --global
+```
+
+Install nuget packages
+
+```
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.0.2
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.3
+dotnet add package Microsoft.AspNetCore.Identity.UI --version 6.0.3
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.3
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.3
+```
+
+Add default idendity components
+
+```
+dotnet aspnet-codegenerator identity --useDefaultUI --dbContext RazorPagesPizzaAuth
+```
+
+## Update the db
+
+```
+dotnet tool install dotnet-ef --version 6.0.3 --global
+dotnet ef migrations add CreateIdentitySchema
+dotnet ef database update
+```
