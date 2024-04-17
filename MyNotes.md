@@ -30,3 +30,21 @@ dotnet tool install dotnet-ef --version 6.0.3 --global
 dotnet ef migrations add CreateIdentitySchema
 dotnet ef database update
 ```
+
+
+## [Customize Identity](https://learn.microsoft.com/en-us/training/modules/secure-aspnet-core-identity/5-customize-identity)
+
+Generate  registration files
+
+```
+dotnet aspnet-codegenerator identity --dbContext RazorPagesPizzaAuth --files "Account.Manage.EnableAuthenticator;Account.Manage.Index;Account.Register;Account.ConfirmEmail" --userClass RazorPagesPizzaUser --force
+```
+
+Some manual changes
+
+Update database
+
+```
+dotnet ef migrations add UpdateUser
+dotnet ef database update
+```
