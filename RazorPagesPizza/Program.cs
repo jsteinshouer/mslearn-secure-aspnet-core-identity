@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RazorPagesPizza.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using RazorPagesPizza.Services;
+using QRCoder;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("RazorPagesPizzaAuthConnection");
@@ -11,6 +12,7 @@ builder.Services.AddDefaultIdentity<RazorPagesPizzaUser>(options => options.Sign
       .AddEntityFrameworkStores<RazorPagesPizzaAuth>();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.AddSingleton(new QRCodeService(new QRCodeGenerator()));
 
 var app = builder.Build();
 
