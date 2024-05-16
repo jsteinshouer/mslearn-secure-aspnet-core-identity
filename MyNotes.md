@@ -48,3 +48,15 @@ Update database
 dotnet ef migrations add UpdateUser
 dotnet ef database update
 ```
+
+## [2FA](https://learn.microsoft.com/en-us/training/modules/secure-aspnet-core-identity/6-multi-factor-authentication)
+
+### TOTP
+
+- Codes sent by SMS are reletivly easy to defeat but better than nothing. TOTP is a better option.
+
+Add lib , using nuget, to generate a QR code
+
+```
+dotnet add package QRCoder --version 1.4.3
+```
