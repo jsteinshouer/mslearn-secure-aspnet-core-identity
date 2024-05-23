@@ -60,3 +60,6 @@ Add lib , using nuget, to generate a QR code
 ```
 dotnet add package QRCoder --version 1.4.3
 ```
+
+## [Authorization](https://learn.microsoft.com/en-us/training/modules/secure-aspnet-core-identity/9-enable-claims-policy-authorization)
+
